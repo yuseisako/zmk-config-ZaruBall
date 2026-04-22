@@ -116,6 +116,15 @@
 
             label = "MKP_EXIT_AML";
         };
+
+        switch_lang: switch_lang {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press &kp LSHIFT>,
+                <&macro_tap &kp CAPS>,
+                <&macro_release &kp LSHIFT>;
+        };
     };
 };
 
