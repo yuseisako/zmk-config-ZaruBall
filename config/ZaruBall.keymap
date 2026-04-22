@@ -121,14 +121,26 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press &kp LSHIFT>,
-                <&macro_tap &kp CAPS>,
-                <&macro_release &kp LSHIFT>;
+                <&macro_press>,
+                <&kp LSHIFT>,
+                <&macro_tap>,
+                <&kp CAPS>,
+                <&macro_release>,
+                <&kp LSHIFT>;
         };
     };
 };
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        switch_lang {
+            bindings = <&switch_lang>;
+            key-positions = <36 45>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
