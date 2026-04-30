@@ -77,7 +77,7 @@
     };
 };
 
-&sl { release-after-ms = <250>; }; // time needed for double click (for mkp_exit_AML)
+&sl { release-after-ms = <1000>; }; // time needed for double click (for mkp_exit_AML)
 / {
     macros {
         // When in AML, move to default layer when key (except mouse button) pressed
@@ -88,8 +88,6 @@
             bindings = <&tog MOUSE &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_layer_0";
         };
-
-        // When LCLK pressed, exit AML (after 250ms cause by sticky layer
 
         mkp_exit_AML: mkp_exit_AML {
             compatible = "zmk,behavior-macro-one-param";
