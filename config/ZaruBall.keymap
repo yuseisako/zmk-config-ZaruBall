@@ -127,12 +127,12 @@
             key-positions = <36 45>;
         };
 
-        LCLK {
+        left_click {
             bindings = <&mkp LCLK>;
             key-positions = <45 46>;
         };
 
-        RCLK {
+        right_click {
             bindings = <&mkp RCLK>;
             key-positions = <46 47>;
         };
