@@ -1,7 +1,6 @@
 #include "ZaruBall.dtsi"
 
 &kscan0 {
-    wakeup-source;
     gpios
         = <&xiao_d 0 GPIO_ACTIVE_HIGH>//M1
         , <&xiao_d 1 GPIO_ACTIVE_HIGH>//M2
