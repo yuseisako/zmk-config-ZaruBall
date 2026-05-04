@@ -75,14 +75,25 @@
             display-name = "SandS";
         };
 
-        mkp_kp_mkp: mkp_kp_mkp {
+        tolayer0_mkp: tolayer0_mkp {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            bindings = <&mkp>, <&mkp>;
+            bindings = <&mkp>, <&to_layer_0>;
 
             display-name = "MT_KP_MKP";
+        };
+
+        kp_mkp: kp_mkp {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mkp>, <&kp>;
+
+            display-name = "MT_KP_MKP";
+            label = "KP_MKP";
         };
     };
 };
@@ -137,14 +148,9 @@
             key-positions = <36 45>;
         };
 
-        prev {
-            bindings = <&mkp MB4>;
-            key-positions = <63 64>;
-        };
-
-        next {
-            bindings = <&mkp MB5>;
-            key-positions = <64 65>;
+        middle_click {
+            bindings = <&mkp MB3>;
+            key-positions = <65 66>;
         };
     };
 
@@ -167,11 +173,11 @@
             display-name = "Mouse";
             sensor-bindings = <&scroll_down_up>;
             bindings = <
-&to_layer_0 ESC  &to_layer_0 N1  &to_layer_0 N2  &to_layer_0 N3  &to_layer_0 N4  &to_layer_0 N5                       &trans  &trans  &trans  &trans                       &to_layer_0 N6  &to_layer_0 N7  &to_layer_0 N8     &to_layer_0 N9  &to_layer_0 N0            &to_layer_0 MINUS
-&to_layer_0 TAB  &to_layer_0 Q   &to_layer_0 W   &to_layer_0 E   &to_layer_0 R   &to_layer_0 T                        &trans  &trans  &trans  &trans                       &to_layer_0 Y   &to_layer_0 U   &to_layer_0 I      &to_layer_0 O   &to_layer_0 P             &to_layer_0 BACKSPACE
-&kp LCTRL        &to_layer_0 A   &to_layer_0 S   &to_layer_0 D   &to_layer_0 F   &to_layer_0 G   &trans               &trans  &trans  &trans  &trans    &trans             &to_layer_0 H   &to_layer_0 J   &to_layer_0 K      &to_layer_0 L   &to_layer_0 SINGLE_QUOTE  &to_layer_0 SEMICOLON
-&kp LSHIFT       &to_layer_0 Z   &to_layer_0 X   &to_layer_0 C   &to_layer_0 V   &to_layer_0 B   &trans               &trans  &trans  &trans  &trans    &trans             &to_layer_0 N   &to_layer_0 M   &to_layer_0 COMMA  &mkp MB1        &mkp MB2                  &to_layer_0 BACKSLASH
-&trans           &kp C_MUTE                      &trans          &kp LEFT_WIN    &kp LEFT_ALT    &to_layer_0 SPACE                                      &to_layer_0 ENTER  &trans                                                                                       &trans
+&to_layer_0 ESC  &to_layer_0 N1  &to_layer_0 N2  &to_layer_0 N3  &to_layer_0 N4  &to_layer_0 N5                       &trans  &trans  &trans  &trans                       &to_layer_0 N6  &to_layer_0 N7  &to_layer_0 N8     &to_layer_0 N9       &to_layer_0 N0           &to_layer_0 MINUS
+&to_layer_0 TAB  &to_layer_0 Q   &to_layer_0 W   &to_layer_0 E   &to_layer_0 R   &to_layer_0 T                        &trans  &trans  &trans  &trans                       &to_layer_0 Y   &to_layer_0 U   &to_layer_0 I      &to_layer_0 O        &to_layer_0 P            &to_layer_0 BACKSPACE
+&kp LCTRL        &to_layer_0 A   &to_layer_0 S   &to_layer_0 D   &to_layer_0 F   &to_layer_0 G   &trans               &trans  &trans  &trans  &trans    &trans             &to_layer_0 H   &to_layer_0 J   &to_layer_0 K      &tolayer0_mkp MB4 L  &tolayer0_mkp MB5 MINUS  &to_layer_0 SEMICOLON
+&kp LSHIFT       &to_layer_0 Z   &to_layer_0 X   &to_layer_0 C   &to_layer_0 V   &to_layer_0 B   &trans               &trans  &trans  &trans  &trans    &trans             &to_layer_0 N   &to_layer_0 M   &to_layer_0 COMMA  &mkp MB1             &mkp MB2                 &to_layer_0 BACKSLASH
+&trans           &kp C_MUTE                      &trans          &kp LEFT_WIN    &kp LEFT_ALT    &to_layer_0 SPACE                                      &to_layer_0 ENTER  &trans                                                                                           &trans
             >;
         };
 
