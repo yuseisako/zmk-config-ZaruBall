@@ -78,8 +78,8 @@
         tolayer0_mkp: tolayer0_mkp {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <500>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
             bindings = <&mkp>, <&to_layer_0>;
 
             display-name = "MT_KP_MKP";
@@ -88,8 +88,8 @@
         kp_mkp: kp_mkp {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <500>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
             bindings = <&mkp>, <&kp>;
 
             display-name = "MT_KP_MKP";
