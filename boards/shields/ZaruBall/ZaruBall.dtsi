@@ -206,6 +206,7 @@
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
+        scroll-layers = <3>;
 
         force-awake;
         /* keep the sensor awake while ZMK activity state is ACTIVE,
