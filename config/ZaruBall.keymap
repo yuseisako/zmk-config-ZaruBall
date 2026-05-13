@@ -160,6 +160,27 @@
 
             label = "PRINT_SCREEN";
         };
+
+        bracket1: bracket1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR &kp RPAR &kp LEFT>;
+            label = "BRACKET1";
+        };
+
+        bracket2: bracket2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT>;
+            label = "BRACKET2";
+        };
+
+        bracket3: bracket3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT>;
+            label = "BRACKET3";
+        };
     };
 };
 
@@ -209,11 +230,11 @@
             display-name = "Lower";
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             bindings = <
-&trans  &kp F1      &kp F2   &kp F3  &kp F4                &kp F5                           &trans  &trans  &trans  &trans            &kp F6        &kp F7  &kp F8  &kp F9  &kp F10    &none
-&trans  &kp F11     &kp F12  &none   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS            &trans  &trans  &trans  &trans            &kp ASTERISK  &kp N7  &kp N8  &kp N9  &kp PLUS   &none
-&trans  &none       &none    &none   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none     &trans  &trans  &trans  &trans    &none   &kp SLASH     &kp N4  &kp N5  &kp N6  &kp MINUS  &none
-&trans  &none       &none    &none   &kp LEFT_BRACE        &kp RIGHT_BRACE        &none     &trans  &trans  &trans  &trans    &none   &kp COLON     &kp N1  &kp N2  &kp N3  &kp EQUAL  &none
-&trans  &kp C_MUTE           &trans  &trans                &trans                 &trans                                      &trans  &kp N0                                           &trans
+&trans  &kp F1      &kp F2   &kp F3  &kp F4  &kp F5               &trans  &trans  &trans  &trans            &kp F6        &kp F7  &kp F8  &kp F9  &kp F10    &none
+&trans  &kp F11     &kp F12  &none   &trans  &bracket1            &trans  &trans  &trans  &trans            &kp ASTERISK  &kp N7  &kp N8  &kp N9  &kp PLUS   &none
+&trans  &none       &none    &none   &trans  &bracket2  &none     &trans  &trans  &trans  &trans    &none   &kp SLASH     &kp N4  &kp N5  &kp N6  &kp MINUS  &none
+&trans  &none       &none    &none   &trans  &bracket3  &none     &trans  &trans  &trans  &trans    &none   &kp COLON     &kp N1  &kp N2  &kp N3  &kp EQUAL  &none
+&trans  &kp C_MUTE           &trans  &trans  &trans     &trans                                      &trans  &kp N0                                           &trans
             >;
         };
 
@@ -221,11 +242,11 @@
             display-name = "Raise";
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             bindings = <
-&trans  &kp F1      &kp NUMBER_2  &kp F3    &kp F4     &kp F5                 &trans  &trans  &trans  &trans              &trans        &trans    &trans        &trans     &trans           &trans
-&trans  &kp F6      &kp F7        &kp F8    &kp F9     &kp F10                &trans  &trans  &trans  &trans              &kp LA(F1)    &trans    &kp UP_ARROW  &trans     &kp KP_MULTIPLY  &kp DELETE
-&trans  &kp F11     &kp F12       &kp UP    &none      &kp HOME  &kp PG_UP    &trans  &trans  &trans  &trans    &kp LPAR  &kp C_VOL_UP  &kp LEFT  &kp DOWN      &kp RIGHT  &kp KP_MINUS     &none
-&trans  &none       &kp LEFT      &kp DOWN  &kp RIGHT  &kp END   &kp PG_DN    &trans  &trans  &trans  &trans    &kp RPAR  &kp C_VOL_DN  &kp HOME  &kp INSERT    &kp END    &kp KP_PLUS      &none
-&trans  &kp C_MUTE                &trans    &trans     &trans    &trans                                         &trans    &kp DEL                                                           &studio_unlock
+&trans  &trans      &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans            &trans        &trans    &trans        &trans     &trans           &trans
+&trans  &trans      &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans            &kp LA(F1)    &trans    &kp UP_ARROW  &trans     &kp KP_MULTIPLY  &kp DELETE
+&trans  &trans      &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans    &trans  &kp C_VOL_UP  &kp LEFT  &kp DOWN      &kp RIGHT  &kp KP_MINUS     &none
+&trans  &trans      &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans    &trans  &kp C_VOL_DN  &kp HOME  &kp INSERT    &kp END    &kp KP_PLUS      &none
+&trans  &kp C_MUTE          &trans  &trans  &trans  &trans                                      &trans  &kp DEL                                                           &studio_unlock
             >;
         };
 
