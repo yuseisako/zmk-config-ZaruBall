@@ -185,7 +185,13 @@
         email_template: email_template {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp O &kp T &kp U &kp K &kp A &kp R &kp E &kp S &kp A &kp M &kp A &kp D &kp E &kp S &kp U &kp DOT &kp SPACE &kp ENTER &kp ENTER &kp Y &kp O &kp R &kp O &kp S &kp H &kp I &kp K &kp U &kp O &kp N &kp E &kp G &kp A &kp I &kp S &kp H &kp I &kp M &kp A &kp S &kp U &kp DOT &kp SPACE &kp ENTER &kp ENTER &kp S &kp A &kp K &kp O &kp SPACE &kp ENTER &kp ENTER &kp UP_ARROW &kp UP_ARROW>;
+            bindings =
+                <&kp O &kp T &kp U &kp K &kp A &kp R &kp E &kp S &kp A &kp M &kp A &kp D &kp E &kp S &kp U &kp DOT &kp SPACE &kp ENTER &kp ENTER>,
+                <&macro_wait_time 500>,
+                <&kp Y &kp O &kp R &kp O &kp S &kp H &kp I &kp K &kp U &kp O &kp N &kp E &kp G &kp A &kp I &kp S &kp H &kp I &kp M &kp A &kp S &kp U &kp DOT &kp SPACE &kp ENTER &kp ENTER>,
+                <&macro_wait_time 500>,
+                <&kp S &kp A &kp K &kp O &kp SPACE &kp ENTER &kp ENTER &kp UP_ARROW &kp UP_ARROW>;
+
             label = "EMAIL_TEMPLATE";
         };
     };
