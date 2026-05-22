@@ -113,7 +113,6 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT)>;
         };
     };
 };
@@ -205,6 +204,20 @@
             bindings = <&kp A &kp D &kp M &kp I &kp N &kp I &kp S &kp T &kp R &kp A &kp T &kp O &kp R>;
             label = "ADMINISTRATOR";
         };
+
+        date_excel: date_excel {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LSHIFT>,
+                <&macro_tap>,
+                <&kp SEMICOLON>,
+                <&macro_release>,
+                <&kp LSHIFT>;
+
+            label = "DATE_EXCEL";
+        };
     };
 };
 
@@ -266,7 +279,7 @@
             bindings = <
 &trans  &kp F1          &kp F2   &kp F3           &kp F4  &kp F5               &trans  &trans  &trans  &trans            &kp F6        &kp F7  &kp F8  &kp F9  &kp F10    &none
 &trans  &kp F11         &kp F12  &email_template  &trans  &bracket1            &trans  &trans  &trans  &trans            &kp ASTERISK  &kp N7  &kp N8  &kp N9  &kp PLUS   &kp BACKSPACE
-&trans  &administrator  &none    &none            &trans  &bracket2  &none     &trans  &trans  &trans  &trans    &none   &kp SLASH     &kp N4  &kp N5  &kp N6  &kp MINUS  &none
+&trans  &administrator  &none    &date_excel      &trans  &bracket2  &none     &trans  &trans  &trans  &trans    &none   &kp SLASH     &kp N4  &kp N5  &kp N6  &kp MINUS  &none
 &trans  &none           &none    &none            &trans  &bracket3  &none     &trans  &trans  &trans  &trans    &none   &kp COLON     &kp N1  &kp N2  &kp N3  &kp EQUAL  &none
 &trans  &kp C_MUTE               &trans           &trans  &trans     &trans                                      &trans  &kp N0                                           &trans
             >;
