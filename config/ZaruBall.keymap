@@ -52,14 +52,14 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mt LALT LANG2>, <&mo ADJUST>;
+            bindings = <&mt LALT LANG2>, <&mo 4>;
         };
 
         td1: tap_dance_1 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mt RCTL LANG1>, <&mo MOUSE>;
+            bindings = <&mt RCTL LANG1>, <&mo 1>;
         };
 
         // Customed Hold-Tap for SandS
@@ -106,13 +106,13 @@
             tapping-term-ms = <500>;
         };
 
-        mm_colon_semi: mm_colon_semi {
+        mm_del: mm_del {
             compatible = "zmk,behavior-mod-morph";
-            label = "MM_COLON_SEMI";
-            bindings = <&kp COLON>, <&kp SEMI>;
+            label = "MM_DEL";
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_LSFT)>;
         };
     };
 };
@@ -125,7 +125,7 @@
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&tog MOUSE &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            bindings = <&tog 1 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_layer_0";
         };
 
@@ -139,7 +139,7 @@
                 <&macro_release>,
                 <&macro_param_1to1 &mkp MACRO_PLACEHOLDER>,
                 <&macro_tap>,
-                <&sl MOUSE>;
+                <&sl 1>;
 
             label = "MKP_EXIT_AML";
         };
@@ -204,20 +204,6 @@
             bindings = <&kp A &kp D &kp M &kp I &kp N &kp I &kp S &kp T &kp R &kp A &kp T &kp O &kp R>;
             label = "ADMINISTRATOR";
         };
-
-        date_excel: date_excel {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LSHIFT>,
-                <&macro_tap>,
-                <&kp SEMICOLON>,
-                <&macro_release>,
-                <&kp LSHIFT>;
-
-            label = "DATE_EXCEL";
-        };
     };
 };
 
@@ -253,11 +239,11 @@
             display-name = "Base";
             sensor-bindings = <&scroll_down_up>;
             bindings = <
-&kp ESC     &kp N1      &kp N2  &kp N3  &kp N4        &kp N5                                   &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_DIVIDE                 &kp NUMBER_6  &kp N7  &kp N8     &kp N9         &kp N0             &mm_colon_semi
-&kp TAB     &kp Q       &kp W   &kp E   &kp R         &kp T                                    &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_MULTIPLY               &kp Y         &kp U   &kp I      &kp O          &kp P              &kp BACKSPACE
+&kp ESC     &kp N1      &kp N2  &kp N3  &kp N4        &kp N5                                   &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_DIVIDE                 &kp NUMBER_6  &kp N7  &kp N8     &kp N9         &kp N0             &mt COLON SEMICOLON
+&kp TAB     &kp Q       &kp W   &kp E   &kp R         &kp T                                    &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_MULTIPLY               &kp Y         &kp U   &kp I      &kp O          &kp P              &mm_del
 &kp LCTRL   &kp A       &kp S   &kp D   &kp F         &kp G         &mt_print_screen 0 CAPS    &kp KP_N1     &kp KP_N2  &kp KP_N3   &kp KP_MINUS       &trans     &kp H         &kp J   &kp K      &kp_mkp MB4 L  &kp_mkp MB5 MINUS  &kp SQT
 &kp LSHIFT  &kp Z       &kp X   &kp C   &kp V         &kp B         &trans                     &kp KP_ENTER  &kp KP_N0  &kp KP_DOT  &kp KP_PLUS        &trans     &kp N         &kp M   &kp COMMA  &kp DOT        &kp FSLH           &kp BACKSLASH
-&mo 2       &kp C_MUTE          &mo 4   &kp LEFT_GUI  &kp LEFT_ALT  &kp SPACE                                                                          &kp ENTER  &mo 3                                                              &trans
+&mo 2       &kp C_MUTE          &mo 4   &kp LEFT_GUI  &kp LEFT_ALT  &kp SPACE                                                                          &kp ENTER  &mo 3                                                              &mo 5
             >;
         };
 
@@ -277,11 +263,11 @@
             display-name = "Lower";
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             bindings = <
-&trans  &kp F1          &kp F2   &kp F3           &kp F4  &kp F5               &trans  &trans  &trans  &trans            &kp F6        &kp F7  &kp F8  &kp F9  &kp F10    &none
-&trans  &kp F11         &kp F12  &email_template  &trans  &bracket1            &trans  &trans  &trans  &trans            &kp ASTERISK  &kp N7  &kp N8  &kp N9  &kp PLUS   &kp BACKSPACE
-&trans  &administrator  &none    &date_excel      &trans  &bracket2  &none     &trans  &trans  &trans  &trans    &none   &kp SLASH     &kp N4  &kp N5  &kp N6  &kp MINUS  &none
-&trans  &none           &none    &none            &trans  &bracket3  &none     &trans  &trans  &trans  &trans    &none   &kp COLON     &kp N1  &kp N2  &kp N3  &kp EQUAL  &none
-&trans  &kp C_MUTE               &trans           &trans  &trans     &trans                                      &trans  &kp N0                                           &trans
+&trans  &kp F1      &kp F2   &kp F3  &kp F4  &kp F5               &trans  &trans  &trans  &trans            &kp F6        &kp F7  &kp F8  &kp F9  &kp F10    &none
+&trans  &kp F11     &kp F12  &none   &trans  &bracket1            &trans  &trans  &trans  &trans            &kp ASTERISK  &kp N7  &kp N8  &kp N9  &kp PLUS   &kp BACKSPACE
+&trans  &none       &none    &none   &trans  &bracket2  &none     &trans  &trans  &trans  &trans    &none   &kp SLASH     &kp N4  &kp N5  &kp N6  &kp MINUS  &none
+&trans  &none       &none    &none   &trans  &bracket3  &none     &trans  &trans  &trans  &trans    &none   &kp COLON     &kp N1  &kp N2  &kp N3  &kp EQUAL  &none
+&trans  &kp C_MUTE           &trans  &trans  &trans     &trans                                      &trans  &kp N0                                           &trans
             >;
         };
 
@@ -299,7 +285,7 @@
 
         adjust_layer {
             display-name = "Adjust";
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_BRI_INC C_BRIGHTNESS_DEC>;
             bindings = <
 &trans  &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4            &trans  &trans  &trans  &trans              &bt BT_CLR_ALL  &none  &none         &none  &none  &none
 &trans  &studio_unlock  &none         &none         &none         &none                   &trans  &trans  &trans  &trans              &bt BT_CLR      &none  &kp C_VOL_UP  &none  &none  &none
@@ -311,8 +297,16 @@
 
         // Extra layer can be added in ZMK STUDIO
 
-        extra1 { status = "reserved"; };
+        shortcut_layer {
+            bindings = <
+&trans  &trans          &trans  &trans           &trans  &trans            &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans          &trans  &email_template  &trans  &trans            &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &administrator  &trans  &trans           &trans  &trans  &trans    &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans          &trans  &trans           &trans  &trans  &trans    &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans                  &trans           &trans  &trans  &trans                                      &trans  &trans                                  &trans
+            >;
 
-        extra2 { status = "reserved"; };
+            label = "shortcut";
+        };
     };
 };
