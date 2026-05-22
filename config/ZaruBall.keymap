@@ -230,6 +230,16 @@
             bindings = <&mkp RCLK>;
             key-positions = <47 46>;
         };
+
+        kana {
+            bindings = <&kp LANGUAGE_1>;
+            key-positions = <45 46>;
+        };
+
+        eisu {
+            bindings = <&kp LANGUAGE_2>;
+            key-positions = <36 35>;
+        };
     };
 
     keymap {
