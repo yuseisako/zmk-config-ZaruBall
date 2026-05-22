@@ -221,16 +221,6 @@
             key-positions = <65 66>;
         };
 
-        l_click {
-            bindings = <&mkp LCLK>;
-            key-positions = <46 45>;
-        };
-
-        r_click {
-            bindings = <&mkp RCLK>;
-            key-positions = <47 46>;
-        };
-
         kana {
             bindings = <&kp F13>;
             key-positions = <45 46>;
