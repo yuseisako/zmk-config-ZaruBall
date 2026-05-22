@@ -105,6 +105,15 @@
             flavor = "tap-preferred";
             tapping-term-ms = <500>;
         };
+
+        mm_colon_semi: mm_colon_semi {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_COLON_SEMI";
+            bindings = <&kp COLON>, <&kp SEMI>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 };
 
@@ -230,11 +239,11 @@
             display-name = "Base";
             sensor-bindings = <&scroll_down_up>;
             bindings = <
-&kp ESC                      &kp N1      &kp N2  &kp N3  &kp N4        &kp N5                     &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_DIVIDE                 &kp NUMBER_6  &kp N7  &kp N8     &kp N9         &kp N0             &kp SEMICOLON
-&kp TAB                      &kp Q       &kp W   &kp E   &kp R         &kp T                      &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_MULTIPLY               &kp Y         &kp U   &kp I      &kp O          &kp P              &kp BACKSPACE
-&kp LCTRL                    &kp A       &kp S   &kp D   &kp F         &kp G         &mo 2        &kp KP_N1     &kp KP_N2  &kp KP_N3   &kp KP_MINUS       &trans     &kp H         &kp J   &kp K      &kp_mkp MB4 L  &kp_mkp MB5 MINUS  &kp SQT
-&kp LSHIFT                   &kp Z       &kp X   &kp C   &kp V         &kp B         &trans       &kp KP_ENTER  &kp KP_N0  &kp KP_DOT  &kp KP_PLUS        &trans     &kp N         &kp M   &kp COMMA  &kp DOT        &kp FSLH           &lt 2 BACKSLASH
-&mt_print_screen 0 CAPSLOCK  &kp C_MUTE          &mo 4   &kp LEFT_GUI  &kp LEFT_ALT  &kp SPACE                                                            &kp ENTER  &mo 3                                                              &trans
+&kp ESC     &kp N1      &kp N2  &kp N3  &kp N4        &kp N5                                   &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_DIVIDE                 &kp NUMBER_6  &kp N7  &kp N8     &kp N9         &kp N0             &mm_colon_semi
+&kp TAB     &kp Q       &kp W   &kp E   &kp R         &kp T                                    &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_MULTIPLY               &kp Y         &kp U   &kp I      &kp O          &kp P              &kp BACKSPACE
+&kp LCTRL   &kp A       &kp S   &kp D   &kp F         &kp G         &mt_print_screen 0 CAPS    &kp KP_N1     &kp KP_N2  &kp KP_N3   &kp KP_MINUS       &trans     &kp H         &kp J   &kp K      &kp_mkp MB4 L  &kp_mkp MB5 MINUS  &kp SQT
+&kp LSHIFT  &kp Z       &kp X   &kp C   &kp V         &kp B         &trans                     &kp KP_ENTER  &kp KP_N0  &kp KP_DOT  &kp KP_PLUS        &trans     &kp N         &kp M   &kp COMMA  &kp DOT        &kp FSLH           &kp BACKSLASH
+&mo 2       &kp C_MUTE          &mo 4   &kp LEFT_GUI  &kp LEFT_ALT  &kp SPACE                                                                          &kp ENTER  &mo 3                                                              &trans
             >;
         };
 
